@@ -1,0 +1,18 @@
+.title{
+    font-size: 0.8em;
+}
+.card{
+    border:  none;
+    text-align: center;
+}
+
+img{
+    height: 200px;
+    object-fit: contain;
+}
+.select{
+    border: solid 5px red;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
