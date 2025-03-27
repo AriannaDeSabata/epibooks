@@ -6,7 +6,7 @@ export default function WelcomeComponent() {
   return (
 
       <Alert className='alertWelcome text-end' >
-        <h1>Benvenuto in EpiBooks ! <br/> <span>La Tua Libreria Digitale</span></h1>
+        <h1>Welcome to EpiBooks ! <br/> <span>Your digital library</span></h1>
       </Alert>
 
   )

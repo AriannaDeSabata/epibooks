@@ -11,10 +11,11 @@ h1 span{
 
 
 .alertWelcome{
-    background-image: url("https://images.pexels.com/photos/3760323/pexels-photo-3760323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-image: url("https://img.freepik.com/foto-gratuito/natura-morta-di-libri-contro-tecnologia_23-2150063081.jpg?t=st=1743082271~exp=1743085871~hmac=2da06c8eb1d69936b91fe2be9fb56a1f61e3d4e96d437c54199229f462a30f1b&w=996");
     background-size: cover;
     border-radius: 0px;
     border: none;
+    height: 300px;
     background-repeat: no-repeat;
     background-position: 0px 70%;
 
