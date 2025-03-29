@@ -8,3 +8,28 @@
     background-color:  rgb(247, 247, 247);
 }
 
+
+
+.contComment{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.contComment .btn{
+    font-size: 0.8em;
+    height: 50%;
+}
+
+@media screen and (max-width: 430px) {
+    .contComment{
+        display: block;
+
+    }
+    .contComment .btn{
+        font-size: 0.7em;
+        height: 50%;
+        margin-top: 10px;
+        float: right;
+    }
+}

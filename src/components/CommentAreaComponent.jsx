@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import AddCommentComponent from './AddCommentComponent'
 import CommentListComponent from './CommentListComponent'
-import { Alert, Spinner } from 'react-bootstrap'
+import { Alert} from 'react-bootstrap'
+
 
 export default function CommentAreaComponent({asin}) {
 
@@ -11,8 +12,16 @@ export default function CommentAreaComponent({asin}) {
   const keyFetch ="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JkYzg1ZDFlMTQwNjAwMTUzMTRjYjAiLCJpYXQiOjE3NDI2Mzc0MjcsImV4cCI6MTc0Mzg0NzAyN30.of6UQtnnLiaGAObb8qZH-CMlqPNxLCV3o15v6uOaZc4"
 
   const [listComments, setListComments] = useState([])
-  const [loading, setLoading] = useState(true)
+
   const [alertError, setAlertError] = useState(false)
+
+  const[noComment, setNoComment] = useState(false)
+
+    useEffect(()=>{
+
+        setNoComment(true)
+    },[])
+
 
   useEffect(()=>{
 
@@ -27,9 +36,15 @@ export default function CommentAreaComponent({asin}) {
         )
 
         if(res.ok){
-            setLoading(false)
             const json = await res.json()
             setListComments(json)
+
+            if (Array.isArray(json) && json.length > 0) {
+              setNoComment(false);
+          } else {
+              setNoComment(true);
+          }
+
         }
 
 
@@ -68,19 +83,18 @@ export default function CommentAreaComponent({asin}) {
   return (
     <>
       <AddCommentComponent keyFetch={keyFetch} asin={asin} add={addComment} list ={listComments}/>
-      {loading &&    
-        <div className="d-flex justify-content-center">
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        </div>
-      }
+
       {alertError &&
         <Alert className='mt-2' variant='danger'>
           Errore! Commenti non disponibili
         </Alert>
       }
-
+      <h5 className='mb-0 p-0 mt-2' >Commenti</h5>
+      {noComment &&
+        <Alert className='mt-2' variant='light'>
+          Non ci sono commenti! Clicca su un libro per visualizzarli 
+        </Alert>
+      }
       <CommentListComponent list={listComments} removeComment={deleteComment}/>
     </>
 

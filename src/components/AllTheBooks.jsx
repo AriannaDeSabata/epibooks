@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Container,  Row } from 'react-bootstrap'
-
-
+import { Col, Container,  Row } from 'react-bootstrap'
 import SingleBookComponent from './SingleBookComponent';
-
 import booksFantasy from '../books/fantasy.json';
 import { ThemeContext } from './modules/context';
+import CommentAreaComponent from './CommentAreaComponent';
+
+
 const arrayBooks = booksFantasy
 
 
@@ -13,6 +13,7 @@ export default function AllTheBooks({searchValue}) {
 
   const [theme] =useContext(ThemeContext)
   const [books, setBooks]= useState(arrayBooks)
+  const [selected, setSelected] = useState('')
 
   useEffect(()=>{
     if(searchValue !== ""){
@@ -26,18 +27,30 @@ export default function AllTheBooks({searchValue}) {
 
   
   return (
-    <Container className='mt-5' className={theme === "light" ? "" : "darkMode"}>
+    <Container className={`${theme === "light" ? "" : "darkMode"}, mt-5`}>
 
         <Row className='px-3 px-md-0 gx-4 gy-4 mt-3'>
+            <Col xs={4} md={5}>
+                <Row>
+                    {books.map((book)=> {
+                      return (
+                        <SingleBookComponent key={book.asin} book={book} 
+                        selected={selected} setSelected={setSelected}/>
+                      )
+                    }
 
-            {books.map((book)=> {
-              return (
-                <SingleBookComponent key={book.asin} book={book}/>
-              )
-            }
-
-            )}
-
+                    )}
+                </Row>
+            </Col>
+            <Col xs={8} md={7} 
+                      style={{
+                        maxHeight: '80vh', 
+                        overflowY: 'auto', 
+                        position:'sticky',
+                        top: '30px',
+                      }}>
+                <CommentAreaComponent asin={selected}/>
+            </Col>
         </Row>
     </Container>
   )

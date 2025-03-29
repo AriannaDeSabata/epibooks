@@ -38,14 +38,14 @@ export default function SingleCommentComponent({comment, remove}) {
 
 
         <ListGroup.Item  className='list'key={comment._id}>
-            <Stack direction="horizontal" gap={3}className='justify-content-between'>
+            <div className='contComment'>
                 <div>
                     <p className='author'>{comment.author}</p> 
                     <span>{comment.comment}</span>
                 </div>
 
                 <Button className='btn btn-danger' onClick={show}>Elimina</Button>
-          </Stack>
+          </div>
 
 
           {showAlert &&
