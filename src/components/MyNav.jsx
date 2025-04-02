@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap'
 import { ThemeContext } from './modules/context'
+import { Link } from 'react-router-dom'
 
 export default function MyNav({ setSearch}) {
 
@@ -14,11 +15,12 @@ export default function MyNav({ setSearch}) {
 
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-                <Nav.Link href="#">Home</Nav.Link>
-                <Nav.Link href="#">About</Nav.Link>
-                <Nav.Link href="#">Browse</Nav.Link>
-                <Form  >
-                  <Form.Control placeholder="Search Book"  onChange={(event)=>setSearch(event.target.value)}/>
+                <Link to='/' className='nav-link'>Home</Link>
+                <Link  className='nav-link'>About</Link>
+                <Link  className='nav-link'>Browse</Link>
+                
+                <Form >
+                  <Form.Control type='search' placeholder="Search Book"  onChange={(event)=>setSearch(event.target.value)}/>
                 </Form>
             </Nav>
 

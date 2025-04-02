@@ -9,7 +9,8 @@ export default function CommentAreaComponent({asin}) {
 
   const url = "https://striveschool-api.herokuapp.com/api/books/"
   const urlDelete = "https://striveschool-api.herokuapp.com/api/comments/"
-  const keyFetch ="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JkYzg1ZDFlMTQwNjAwMTUzMTRjYjAiLCJpYXQiOjE3NDI2Mzc0MjcsImV4cCI6MTc0Mzg0NzAyN30.of6UQtnnLiaGAObb8qZH-CMlqPNxLCV3o15v6uOaZc4"
+  
+  const keyFetch ="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JkYzg1ZDFlMTQwNjAwMTUzMTRjYjAiLCJpYXQiOjE3NDM1NzkzOTksImV4cCI6MTc0NDc4ODk5OX0.OtmRH06Ll9_QjLQYmVUV-3Aoc_hkjwlLsVzDzLCTlXc"
 
   const [listComments, setListComments] = useState([])
 
@@ -86,13 +87,13 @@ export default function CommentAreaComponent({asin}) {
 
       {alertError &&
         <Alert className='mt-2' variant='danger'>
-          Errore! Commenti non disponibili
+            No comments! Click on a book to view them
         </Alert>
       }
-      <h5 className='mb-0 p-0 mt-2' >Commenti</h5>
+      <h5 className='mb-0 p-0 mt-2' >Comments</h5>
       {noComment &&
         <Alert className='mt-2' variant='light'>
-          Non ci sono commenti! Clicca su un libro per visualizzarli 
+            No comments! Click on a book to view them 
         </Alert>
       }
       <CommentListComponent list={listComments} removeComment={deleteComment}/>

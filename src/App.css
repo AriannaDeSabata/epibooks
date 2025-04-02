@@ -4,3 +4,16 @@
   color: #fff;
 }
 
+.notFoundStyle{
+  text-align: center;
+
+}
+.notFoundStyle h1{
+  color: black;
+}
+
+.pageContainer {
+  display: flex;          
+  flex-direction: column; 
+  min-height: 100vh;      
+}

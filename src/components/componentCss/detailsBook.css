@@ -1,0 +1,36 @@
+.imgDetailsBook .card{
+    text-align: end;
+} 
+
+
+.imgDetails img{
+    height: 300px;
+    border-radius: 20px;
+    border-radius: 0;
+    box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 3px, rgba(255, 255, 255, 0.24) 0px 1px 2px;
+}
+.imgDetailsBook div.card{
+    background-color: transparent;
+}
+.textDetails p{
+    color: blueviolet;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 0;
+
+}
+
+@media (max-width:430px) {
+
+    .imgDetailsBook .card{
+    text-align:center;
+    } 
+
+    .imgDetails img{
+        height: 400px;
+    }
+    .imgDetails{
+        display: flex;
+        justify-content: center;
+    }
+}

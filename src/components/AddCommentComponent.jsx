@@ -86,27 +86,41 @@ export default function AddCommentComponent({keyFetch, asin, add, list}) {
 
   return (
     <div className=''> 
-    <h4>Aggiungi un commento</h4>
+    <h4>Add a Comment</h4>
       <Form onSubmit={handleSubmit}>
       <Row className='g-3'>
         <Col>
           <Form.Control type="email" placeholder="Email" name='author' onChange={handleChannge} value={newComment.author}/>
         </Col>
-        <Col xs={5}>
-        <Form.Control type="number" placeholder="Dai una valutazione da 1 a 5 " name='rate' onChange={handleChannge} value={newComment.rate}/>
+
+        <Col xs={12} md={5}>
+            <Form.Select
+              aria-label="Dai una valutazione da 1 a 5"
+              name="rate"
+              onChange={handleChannge}
+              value={newComment.rate}
+            >
+              <option value="">Give a Rating</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </Form.Select>
         </Col>
-        <Col xs={10}>
-          <Form.Control type="text" placeholder="Commento" name='comment' onChange={handleChannge} value={newComment.comment}/>
+
+        <Col xs={12} md={10}>
+          <Form.Control type="text" placeholder="Comment" name='comment' onChange={handleChannge} value={newComment.comment}/>
         </Col>
-        <Col>
-          <button type="submit" className='btn btn-success w-100'>Inserisci</button>
+        <Col xs={12} md={2}>
+          <button type="submit" className='btn btn-success w-100'>Add</button>
         </Col>
       </Row>
     </Form>
 
       {showAlertSuccess && 
           <Alert className='mt-2' variant='success'>
-            Post Aggiunto con successo!
+            Post Added successfully!
           </Alert>
       }
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Alert, Button, ListGroup, Stack } from 'react-bootstrap'
-import './componentCss/Comment.css'
+import './componentCss/comment.css'
 
 export default function SingleCommentComponent({comment, remove}) {
 
@@ -31,7 +31,7 @@ export default function SingleCommentComponent({comment, remove}) {
 
       {alertconfirmDelete && 
           <Alert className='mb-0' variant='success'>
-            Commento eliminato con successo 
+            Comment successfully deleted
           </Alert>
       }
 
@@ -44,21 +44,21 @@ export default function SingleCommentComponent({comment, remove}) {
                     <span>{comment.comment}</span>
                 </div>
 
-                <Button className='btn btn-danger' onClick={show}>Elimina</Button>
+                <Button className='btn btn-danger' onClick={show}>Delete</Button>
           </div>
 
 
           {showAlert &&
                     <Alert  variant="success" className='mt-2'>
                     <p>
-                      Confermi di voler Eliminare il seguente commento {}
+                    You confirm that you wish to delete the following comment
                     </p>
                     <div className="d-flex justify-content-end gap-2">
                       <Button  variant="success" onClick={()=> confirmDelete(comment._id)}>
-                        Accetto
+                        Confirm
                       </Button>
                       <Button  variant="danger" onClick={cancel}>
-                        Cancella
+                        Delete
                       </Button>
                     </div>
                   </Alert>

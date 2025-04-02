@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Col, Container,  Row } from 'react-bootstrap'
+import { Col, Container,  Row, Spinner } from 'react-bootstrap'
 import SingleBookComponent from './SingleBookComponent';
 import booksFantasy from '../books/fantasy.json';
 import { ThemeContext } from './modules/context';
@@ -15,6 +15,10 @@ export default function AllTheBooks({searchValue}) {
   const [books, setBooks]= useState(arrayBooks)
   const [selected, setSelected] = useState('')
 
+
+
+
+
   useEffect(()=>{
     if(searchValue !== ""){
       const filterBooks = books.filter(book => book.title.toLowerCase().includes(searchValue.toLowerCase()))
@@ -27,9 +31,9 @@ export default function AllTheBooks({searchValue}) {
 
   
   return (
-    <Container className={`${theme === "light" ? "" : "darkMode"}, mt-5`}>
+    <Container className={`${theme === "light" ? "" : "darkMode"}, mt-3`}>
 
-        <Row className='px-3 px-md-0 gx-4 gy-4 mt-3'>
+        <Row className='px-3 px-md-0 gx-md-5 gy-4'>
             <Col xs={4} md={5}>
                 <Row>
                     {books.map((book)=> {

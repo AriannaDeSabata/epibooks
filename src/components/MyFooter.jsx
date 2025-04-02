@@ -15,11 +15,11 @@ export default function MyFooter() {
             <p>&copy; 2025 Libri Inc. | All Rights Reserved</p>
             </Col>
             <Col xs={8}>
-                <h6>Link Utili</h6>
+                <h6>Useful Links</h6>
                 <ul>
-                    <li><a href="/">Chi Siamo</a></li>
-                    <li><a href="/">Contattaci</a></li>
-                    <li><a href="/">Termini e Condizioni</a></li>
+                    <li><a href="/">Who we are</a></li>
+                    <li><a href="/">Contact us</a></li>
+                    <li><a href="/">Terms and Conditions</a></li>
                     <li><a href="/">Privacy Policy</a></li>
                 </ul>
             </Col>
