@@ -27,7 +27,7 @@ export default function SingleCommentComponent({comment, remove}) {
   }
 
   return (
-    <>
+    < >
 
       {alertconfirmDelete && 
           <Alert className='mb-0' variant='success'>
@@ -37,7 +37,7 @@ export default function SingleCommentComponent({comment, remove}) {
 
 
 
-        <ListGroup.Item  className='list'key={comment._id}>
+        <ListGroup.Item  className='list'key={comment._id} role='single-comment'>
             <div className='contComment'>
                 <div>
                     <p className='author'>{comment.author}</p> 

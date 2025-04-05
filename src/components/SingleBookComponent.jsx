@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function SingleBookComponent({book, selected, setSelected}) {
 
+  const libro = book
 
   const [theme] = useContext(ThemeContext)
 
@@ -14,19 +15,23 @@ export default function SingleBookComponent({book, selected, setSelected}) {
       navigate("/details/" + asin)
   }
 
+  const handleClick =()=>{
+    setSelected(libro.asin)
+  }
+
   return (
 
       
-      <Col xs={12} md={6} 
-      onClick={()=>setSelected(book.asin)}
-      className={`${selected != '' ? "select" : ''  }, mt-3`}
+      <Col role='card-book' xs={12} md={6} 
+      onClick={handleClick}
+      className={`mt-3 ${selected === libro.asin ? "select" : ''  }`}
       >
-        <Card className={theme === "light" ? "" : "darkMode"}>
-          <Card.Img  src={book.img} className='imgBook'/>
+        <Card className={theme === "light" ? "" : "darkMode"} >
+          <Card.Img  src={libro.img} className='imgBook'/>
           <Card.Body className='cardBody'>
-            <Card.Title className='title'>{book.title}</Card.Title>
+            <Card.Title className='title'>{libro.title}</Card.Title>
           </Card.Body>
-          <Button variant="primary" className='detailsBookBtn' onClick={() => detailsBook(book.asin)}>Details</Button>
+          <Button variant="primary" className='detailsBookBtn' onClick={() => detailsBook(libro.asin)}>Details</Button>
         </Card>
 
       </Col>

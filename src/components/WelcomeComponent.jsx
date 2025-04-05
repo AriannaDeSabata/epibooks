@@ -1,12 +1,14 @@
 import React from 'react'
-import { Alert} from 'react-bootstrap'
+import { Alert, Container} from 'react-bootstrap'
 import './componentCss/welcome.css'
 
 export default function WelcomeComponent() {
   return (
 
-      <Alert className='alertWelcome text-end' >
-        <h1>Welcome to EpiBooks ! <br/> <span>Your digital library</span></h1>
+      <Alert className='alertWelcome text-end px-md-5' >
+
+        <h1>Welcome to EpiBooks !</h1>
+
       </Alert>
 
   )

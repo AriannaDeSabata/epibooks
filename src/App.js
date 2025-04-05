@@ -12,7 +12,7 @@ import BookDetails from './components/BookDetails';
 
 
 function App() {
-  const [theme, setTheme] =useState("light")
+  const [theme, setTheme] = useState("light")
   const [search, setSearch] = useState("")
 
   if(theme === "dark"){

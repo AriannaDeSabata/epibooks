@@ -8,12 +8,15 @@ import CommentAreaComponent from './CommentAreaComponent';
 
 const arrayBooks = booksFantasy
 
-
 export default function AllTheBooks({searchValue}) {
 
-  const [theme] =useContext(ThemeContext)
+  const [theme] = useContext(ThemeContext)
   const [books, setBooks]= useState(arrayBooks)
   const [selected, setSelected] = useState('')
+
+
+    const valueSearch = searchValue.toLowerCase()
+
 
 
 
@@ -21,7 +24,7 @@ export default function AllTheBooks({searchValue}) {
 
   useEffect(()=>{
     if(searchValue !== ""){
-      const filterBooks = books.filter(book => book.title.toLowerCase().includes(searchValue.toLowerCase()))
+      const filterBooks = books.filter(book => book.title.toLowerCase().includes(valueSearch))
       setBooks(filterBooks)
     }else{
       setBooks(arrayBooks)

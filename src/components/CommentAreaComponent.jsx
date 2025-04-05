@@ -25,6 +25,7 @@ export default function CommentAreaComponent({asin}) {
 
 
   useEffect(()=>{
+      if(!asin) return
 
       const getComments = async ()=>{
         try{
@@ -82,7 +83,7 @@ export default function CommentAreaComponent({asin}) {
   }
 
   return (
-    <>
+    <div role='cont-commentArea'>
       <AddCommentComponent keyFetch={keyFetch} asin={asin} add={addComment} list ={listComments}/>
 
       {alertError &&
@@ -96,8 +97,13 @@ export default function CommentAreaComponent({asin}) {
             No comments! Click on a book to view them 
         </Alert>
       }
+
+      {listComments && 
+      
       <CommentListComponent list={listComments} removeComment={deleteComment}/>
-    </>
+      }
+
+    </div>
 
 
   )
