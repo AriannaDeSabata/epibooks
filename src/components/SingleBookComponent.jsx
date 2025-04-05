@@ -26,7 +26,7 @@ export default function SingleBookComponent({book, selected, setSelected}) {
       onClick={handleClick}
       className={`mt-3 ${selected === libro.asin ? "select" : ''  }`}
       >
-        <Card className={theme === "light" ? "" : "darkMode"} >
+        <Card className={theme === "light" ? "" : "darkMode"} data-testid="book">
           <Card.Img  src={libro.img} className='imgBook'/>
           <Card.Body className='cardBody'>
             <Card.Title className='title'>{libro.title}</Card.Title>

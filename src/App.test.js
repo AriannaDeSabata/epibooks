@@ -19,21 +19,15 @@ import CommentAreaComponent from './components/CommentAreaComponent';
 })*/
 
 
-describe('verifica numero di libri' ,()=>{
+/*describe('verifica numero di libri' ,()=>{
 
-    it('verifica', async()=>{
-
-      render(
-        <BrowserRouter>
-          <SingleBookComponent />
-        </BrowserRouter>
-      );
-      const cards = await waitFor(()=> screen.findAllByRole('card-book'), { timeout: 5000 })
-
-      expect(cards.length).toBe(150)
+    it('verifica', ()=>{
+      render(<App/>)
+      const AllBooks = screen.getAllByTestId("book")
+      expect(AllBooks).toHaveLength(150)
     })
 
-})
+})*/
 
 
 
@@ -86,7 +80,7 @@ describe('verifica numero di libri' ,()=>{
 })*/
 
 
-/*describe('test single Comment',()=>{
+describe('test single Comment',()=>{
   it('verifica che non ci siano istanze di single component all\'avvio',()=>{
     render(<App/>)
 
@@ -97,7 +91,7 @@ describe('verifica numero di libri' ,()=>{
   it('verifica che al click su un libro vengano caricati i commenti', async () => { 
     render(<App />);
 
-    const AllBooks = screen.queryAllByRole(/card-book/i)
+    const AllBooks = screen.getAllByTestId("book")
     
     expect(AllBooks).toHaveLength(150) 
 
@@ -109,5 +103,5 @@ describe('verifica numero di libri' ,()=>{
     expect(Comments).not.toHaveLength(0) 
   })
 
-})*/
+})
 
