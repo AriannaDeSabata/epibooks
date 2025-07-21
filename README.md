@@ -5,9 +5,10 @@ Progetto realizzato durante il **corso Epicode**: una piccola applicazione front
 
 ## Tecnologie
 
+- **React** (Create React App)
 - **HTML5**
 - **CSS3**
-- **JavaScript (Vanilla)**
+- **JavaScript (ES6+)**
 - **Fetch API**
 
 
