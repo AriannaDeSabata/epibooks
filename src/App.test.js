@@ -10,16 +10,16 @@ import CommentAreaComponent from './components/CommentAreaComponent';
 
 
 
-/*describe('welcome test', ()=>{
+describe('welcome test', ()=>{
   it('render welcome component',()=>{
     render(<WelcomeComponent/>)
     const welcome = screen.getByText(/Welcome to EpiBooks !/i)
     expect(welcome).toBeInTheDocument()
   })
-})*/
+})
 
 
-/*describe('verifica numero di libri' ,()=>{
+describe('verifica numero di libri' ,()=>{
 
     it('verifica', ()=>{
       render(<App/>)
@@ -27,11 +27,11 @@ import CommentAreaComponent from './components/CommentAreaComponent';
       expect(AllBooks).toHaveLength(150)
     })
 
-})*/
+})
 
 
 
-/*describe('renderizzazione commentArea', ()=>{
+describe('renderizzazione commentArea', ()=>{
 
   it('verifa renderizzazione commentArea',()=>{
     render(<CommentAreaComponent/>)
@@ -39,10 +39,10 @@ import CommentAreaComponent from './components/CommentAreaComponent';
     expect(title).toBeInTheDocument()
   })
 
-})*/
+})
 
 
-/*describe('filtraggio dei libri', ()=>{
+describe('filtraggio dei libri', ()=>{
   it('filtro di ricerca',async()=>{
     render(<App/>)
 
@@ -54,10 +54,10 @@ import CommentAreaComponent from './components/CommentAreaComponent';
     expect(AllBooks).toHaveLength(1)
 
   })
-})*/
+})
 
 
-/*describe('cambio colore bordo', ()=>{
+describe('cambio colore bordo', ()=>{
   it('verifica cambio colore', async ()=>{
       render(<App/>)
       const AllBooks = await screen.findAllByRole('card-book')
@@ -77,7 +77,7 @@ import CommentAreaComponent from './components/CommentAreaComponent';
 
   })
 
-})*/
+})
 
 
 describe('test single Comment',()=>{
