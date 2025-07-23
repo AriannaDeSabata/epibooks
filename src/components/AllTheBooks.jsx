@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Col, Container,  Row, Spinner } from 'react-bootstrap'
+import { Col, Container,  Row} from 'react-bootstrap'
 import SingleBookComponent from './SingleBookComponent';
 import booksFantasy from '../books/fantasy.json';
 import { ThemeContext } from './modules/context';
