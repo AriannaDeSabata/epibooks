@@ -18,10 +18,6 @@ export default function AllTheBooks({searchValue}) {
     const valueSearch = searchValue.toLowerCase()
 
 
-
-
-
-
   useEffect(()=>{
     if(searchValue !== ""){
       const filterBooks = books.filter(book => book.title.toLowerCase().includes(valueSearch))
