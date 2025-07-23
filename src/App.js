@@ -6,7 +6,7 @@ import AllTheBooks from './components/AllTheBooks';
 import WelcomeComponent from './components/WelcomeComponent';
 import { useState } from 'react';
 import { ThemeContext } from './components/modules/context';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NotFoundComponent from './components/NotFoundComponent';
 import BookDetails from './components/BookDetails';
 

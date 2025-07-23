@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Alert, Button, ListGroup, Stack } from 'react-bootstrap'
+import { Alert, Button, ListGroup} from 'react-bootstrap'
 import './componentCss/comment.css'
 
 export default function SingleCommentComponent({comment, remove}) {
